@@ -24,8 +24,7 @@ public class CrazyController {
 
 		RLock lock = this.redisson.getLock(LOCKNAME);
 		if (lock.tryLock(1, 10, TimeUnit.SECONDS)) {
-			String rv = "Crazy!";
-			return rv;
+			return "Crazy!";
 		}
 		return "Crazy not obtain lock";
 		

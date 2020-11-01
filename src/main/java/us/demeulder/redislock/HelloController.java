@@ -25,8 +25,7 @@ public class HelloController {
 		RLock lock = this.redissson.getLock(LOCKNAME);
 
 		if (lock.tryLock(1, 10, TimeUnit.SECONDS)) {
-			String rv = "Greetings from Spring Boot!";
-			return rv;
+			return "Greetings from Spring Boot!";
 		}
 		return "Could not obtain lock";
 		
